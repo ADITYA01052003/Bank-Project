@@ -9,8 +9,6 @@ The Bank Management System is a full-stack web application built using Spring Bo
 Each user can create only one account, ensuring better control and data consistency.
 The system uses MySQL as the database and features an AI-enhanced responsive frontend for a modern user experience.
 
-<hr style="border-top: 1px solid #ccc; height: 0; margin: 10px 0;">
-
 
 **_Features_**
 
@@ -23,7 +21,7 @@ The system uses MySQL as the database and features an AI-enhanced responsive fro
 7. CRUD operations handled via Spring Data JPA and REST APIs
 8. Real-time feedback messages for user actions
 
-
+---
 **_Technologies Used_**
 
 - Java
