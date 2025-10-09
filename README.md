@@ -3,7 +3,7 @@
 
 
 
-<h1>**_Project Overview_**</h1>
+**_Project Overview_**
 
 The Bank Management System is a full-stack web application built using Spring Boot that allows users to perform essential banking operations such as creating an account, depositing, withdrawing, closing accounts, and viewing account details.
 Each user can create only one account, ensuring better control and data consistency.
