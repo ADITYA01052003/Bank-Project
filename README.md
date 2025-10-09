@@ -21,15 +21,58 @@ The Bank Management System is a full-stack web application built using Spring Bo
 8. Automatic validation and error handling
 
 
-Technologies Used
+**_Technologies Used_**
 
 - Java
-* Spring Boot
-+ Spring Data JPA
-Spring Web MVC
-REST API
-Thymeleaf
-HTML and CSS
-MySQL (Database)
-Maven (Build tool)
-Eclipse IDE
+- Spring Boot
+- Spring Data JPA
+- Spring Web MVC
+- REST API
+- Thymeleaf
+- HTML and CSS
+- MySQL (Database)
+- Maven (Build tool)
+- Eclipse IDE
+
+
+**_Project Structure_**
+  
+```
+BankManagementSystem/
+│
+├── src/
+│   ├── main/
+│   │   ├── java/in/bank/main/
+│   │   │   ├── BankManagementSystemApplication.java       # Main Spring Boot entry point
+│   │   │   ├── controller/
+│   │   │   │   ├── AccountController.java                 # Handles account operations
+│   │   │   │   ├── AuthController.java                    # Manages registration and login
+│   │   │   ├── entity/
+│   │   │   │   ├── User.java                              # User entity class
+│   │   │   │   ├── Account.java                           # Account entity class
+│   │   │   ├── repository/
+│   │   │   │   ├── UserRepository.java                    # User database operations
+│   │   │   │   ├── AccountRepository.java                 # Account database operations
+│   │   │   ├── service/
+│   │   │   │   ├── AccountService.java                    # Account service interface
+│   │   │   │   ├── AccountServiceImpl.java                # Implements business logic
+│   │   │   │   ├── AuthService.java                       # Authentication service
+│   │   │
+│   │   └── resources/
+│   │       ├── static/css/                                # CSS stylesheets
+│   │       │   ├── auth.css
+│   │       │   ├── style.css
+│   │       ├── templates/                                 # Thymeleaf templates
+│   │       │   ├── login.html
+│   │       │   ├── register.html
+│   │       │   ├── dashboard.html
+│   │       │   ├── createAccount.html
+│   │       │   ├── deposit.html
+│   │       │   ├── withdraw.html
+│   │       └── application.properties                     # Database configuration
+│   │
+│   └── test/                                               # Unit and integration tests
+│
+├── pom.xml                                                 # Maven dependencies
+└── README.md                                               # Project documentation
+```
