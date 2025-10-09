@@ -90,6 +90,8 @@ BankManagementSystem/
 - Spring Data JPA handles all CRUD operations efficiently, and data validation is managed through service and controller layers.
 
 
+
+
 **_Database Schema_**
 
 Database Name: `bank_project`
