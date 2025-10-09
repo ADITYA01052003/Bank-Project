@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>User Home | AP Bank</title>
+<link rel="stylesheet" th:href="@{/css/stylesheet.css}">
+</head>
+<body>
+    <div class="container" style="max-width:600px; text-align:center;">
+        <h2 style="color:#002e6e;">Welcome, <span th:text="${account.account_holder_name}"></span>!</h2>
+
+        <div class="card" style="margin:20px auto; text-align:left;">
+            <p><b>Account Number:</b> <span th:text="${account.account_number}"></span></p>
+            <p><b>Balance:</b> ₹<span th:text="${account.account_balance}"></span></p>
+        </div>
+
+        <div class="card" style="margin-top:30px;">
+            <h3>💰 Deposit Money</h3>
+            <form th:action="@{/bank/deposite}" method="post">
+                <input type="hidden" name="accountNumber" th:value="${account.account_number}">
+                <input type="number" name="amount" placeholder="Enter amount" required />
+                <button type="submit">Deposit</button>
+            </form>
+        </div>
+
+        <div class="card" style="margin-top:30px;">
+            <h3>🏧 Withdraw Money</h3>
+            <form th:action="@{/bank/withdraw}" method="post">
+                <input type="hidden" name="accountNumber" th:value="${account.account_number}">
+                <input type="number" name="amount" placeholder="Enter amount" required />
+                <button type="submit">Withdraw</button>
+            </form>
+        </div>
+
+        <p class="message-success" th:if="${message}" th:text="${message}" style="margin-top:20px;"></p>
+        <p class="message-error" th:if="${error}" th:text="${error}" style="margin-top:20px;"></p>
+
+        <p style="margin-top:25px;">
+            <a th:href="@{/bank/logout}" style="color:#c0392b;">Logout</a>
+        </p>
+    </div>
+
+    <footer>
+        © 2025 AP Bank | Safe, Smart, Simple Banking
+    </footer>
+</body>
+</html>

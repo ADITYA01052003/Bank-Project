@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>Deposit Money</h2>
+
+    <p><b>Account Number:</b> <span th:text="${account.account_number}"></span></p>
+    <p><b>Balance:</b> ₹<span th:text="${account.account_balance}"></span></p>
+
+    <form th:action="@{/bank/deposit}" method="post">
+        <input type="hidden" name="accountNumber" th:value="${account.account_number}" />
+        <input type="number" name="amount" placeholder="Enter amount" required />
+        <button type="submit">Deposit</button>
+    </form>
+
+    <p th:if="${message}" style="color:green;" th:text="${message}"></p>
+    <a th:href="@{/user/home(accountNumber=${account.account_number})}">Back to Home</a>
+</body>
+</html>

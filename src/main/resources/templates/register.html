@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Register | AP Bank</title>
+<link rel="stylesheet" th:href="@{/css/stylesheet.css}">
+</head>
+<body>
+    <div class="container" style="text-align:center; max-width:480px;">
+        <h2>Create Your <span style="color:#f2b01e;">AP Bank</span> Account</h2>
+        <p style="margin-bottom:25px; color:#555;">
+            Join AP Bank today — simple, fast, and secure registration.
+        </p>
+
+        <form th:action="@{/bank/register}" th:object="${user}" method="post" style="text-align:left;">
+            <div>
+                <label>Full Name</label>
+                <input type="text" th:field="*{name}" placeholder="Enter your full name" required>
+            </div>
+            <div>
+                <label>Email Address</label>
+                <input type="email" th:field="*{email}" placeholder="Enter your email" required>
+            </div>
+            <div>
+                <label>Password</label>
+                <input type="password" th:field="*{password}" placeholder="Create a password" required>
+            </div>
+            <div>
+                <label>Phone Number</label>
+                <input type="text" th:field="*{phoneno}" placeholder="Enter your phone number" required>
+            </div>
+            <div>
+                <button type="submit" style="width:100%;">Register</button>
+            </div>
+        </form>
+
+        <div class="message-success" th:if="${RegisterSuccess}" style="margin-top:20px;">
+            ✅ Registration successful! <a th:href="@{/bank/login}">Login here</a>
+        </div>
+
+        <p style="margin-top:20px;">
+            Already have an account? <a th:href="@{/bank/login}" style="color:#002e6e; font-weight:500;">Login</a>
+        </p>
+    </div>
+
+    <footer>
+        © 2025 AP Bank | All Rights Reserved
+    </footer>
+</body>
+</html>

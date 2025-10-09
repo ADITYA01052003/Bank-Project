@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Create Account | AP Bank</title>
+<link rel="stylesheet" th:href="@{/css/stylesheet.css}">
+</head>
+<body>
+    <div class="container" style="text-align:center; max-width:450px;">
+        <h2 style="color:#002e6e;">Open a New Account</h2>
+        <p style="margin-bottom:25px; color:#555;">Fill the details below to get started with AP Bank.</p>
+
+        <form th:action="@{/bank/create-account}" th:object="${account}" method="post" style="text-align:left;">
+            <input type="hidden" name="userId" th:value="${userId}" />
+
+            <div>
+                <label>Account Holder Name</label>
+                <input type="text" th:field="*{account_holder_name}" placeholder="Enter your full name" required />
+            </div>
+
+            <div>
+                <label>Initial Balance</label>
+                <input type="number" th:field="*{account_balance}" placeholder="Enter initial deposit" required />
+            </div>
+
+            <div>
+                <button type="submit" style="width:100%;">Create Account</button>
+            </div>
+        </form>
+
+        <div th:if="${successMessage}" class="message-success" style="margin-top:20px;">
+            ✅ <span th:text="${successMessage}"></span>
+        </div>
+        <div th:if="${errorMessage}" class="message-error" style="margin-top:20px;">
+            ⚠ <span th:text="${errorMessage}"></span>
+        </div>
+
+        <p style="margin-top:25px;">
+            <a th:href="@{/bank/user-home}" style="color:#002e6e; font-weight:500;">← Back to Home</a>
+            <a th:href="@{/bank/logout}" style="color:#c0392b; font-weight:500;">Logout</a>
+        </p>
+    </div>
+
+    <footer>
+        © 2025 AP Bank | Secure Banking for Everyone
+    </footer>
+</body>
+</html>
