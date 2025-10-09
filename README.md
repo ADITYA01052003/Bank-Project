@@ -21,7 +21,7 @@ The system uses MySQL as the database and features an AI-enhanced responsive fro
 7. CRUD operations handled via Spring Data JPA and REST APIs
 8. Real-time feedback messages for user actions
 
----
+
 **_Technologies Used_**
 
 - Java
